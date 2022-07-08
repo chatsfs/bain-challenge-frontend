@@ -11,9 +11,10 @@ const schema = yup
   })
   .required();
 const HomeScene = () => {
-  const [{ distanceLoading, distance, distanceError }, { getDistance }] = useLocation();
+  const [{ distanceLoading, distance }, { getDistance }] = useLocation();
 
   const { register, handleSubmit } = useForm({
+    //@ts-ignore
     resolver: yupResolver(schema),
   });
 
